@@ -72,7 +72,6 @@ const options = Deno.args[0] === "localhost"
   }
   : {};
 
-Deno.serve({
-  port: 443,
-  ...options,
-}, app.fetch);
+Deno.serve((req) => {
+  return new Response("Hello from Deploy!");
+});
