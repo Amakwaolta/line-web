@@ -72,6 +72,5 @@ const options = Deno.args[0] === "localhost"
   }
   : {};
 
-Deno.serve((req) => {
-  return new Response("Hello from Deploy!");
-});
+// Deploy ではポート指定しない
+Deno.serve(app.fetch);
